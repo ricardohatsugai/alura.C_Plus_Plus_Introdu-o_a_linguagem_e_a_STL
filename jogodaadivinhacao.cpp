@@ -1,4 +1,7 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+
 
 using namespace std;
 
@@ -31,7 +34,13 @@ int main(){
     
 
     /*Declarações de variáveis*/
-    const int numero_secreto = 32; // Variável constante.
+
+    srand(time(NULL)); /* Semente para o número aleatório. O parâmetro NULL, na função tipe, nos dáo valor
+     em segundos desde 1970. */
+
+    const int numero_secreto = rand() % 100; // Variável aleatória.
+    cout << "Número secreto é " << numero_secreto << endl;
+
     bool nao_acertou = true;
     int tentativas = 0;
     double pontos = 1000.0;
